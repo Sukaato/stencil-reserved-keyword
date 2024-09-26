@@ -1,0 +1,19 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
+  "extends": ["../../biome.jsonc"],
+  "formatter": {
+    "include": ["src/*"]
+  },
+  "linter": {
+    "include": ["src/**/*"],
+    "ignore": ["**/*.d.ts", "assets/**/*"],
+    "rules": {
+      "correctness": {
+        "useJsxKeyInIterable": "off" // Stencil generate jsx key for us
+      },
+      "suspicious": {
+        "noAssignInExpressions": "off" // Need to turn off the rule for create element ref
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "name": "@test/vue",
+  "type": "module",
+  "version": "0.1.0",
+  "description": "Vue specific wrapper for @test/core",
+  "author": "Sukaato <sukaato.dev@proton.me>",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/types/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "clean": "rimraf ./dist",
+    "prebuild": "npm run clean",
+    "build": "npm run build:bundle && npm run build:vetur && npm run build:web-types",
+    "build:bundle": "rollup --config rollup.config.mjs",
+    "build:vetur": "node --experimental-json-modules ./scripts/build-vetur.js",
+    "build:web-types": "node --experimental-json-modules ./scripts/build-web-types.js",
+    "format": "biome format",
+    "format:fix": "biome format --write",
+    "lint": "biome lint",
+    "lint:fix": "biome lint --fix",
+    "biome": "biome"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.8.3",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@test/docs": "^0.1.0",
+    "change-case": "^5.4.4",
+    "rimraf": "^6.0.1",
+    "rollup": "^4.20.0",
+    "tslib": "^2.7.0",
+    "typescript": "^5.4.5",
+    "vite": "^5.4.0",
+    "vue": "~3.2.47"
+  },
+  "vetur": {
+    "tags": "dist/vetur/tags.json",
+    "attributes": "dist/vetur/attributes.json"
+  },
+  "web-types": "dist/web-types.json",
+  "dependencies": {
+    "@test/core": "^0.1.0"
+  }
+}

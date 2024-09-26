@@ -1,0 +1,13 @@
+{
+  "name": "@test/docs",
+  "version": "0.1.0",
+  "description": "Pre-packaged API documentation for the Test docs.",
+  "author": "Sukaato <sukaato.dev@proton.me>",
+  "license": "MIT",
+  "main": "core.json",
+  "types": "core.d.ts",
+  "files": [
+    "core.json",
+    "core.d.ts"
+  ]
+}

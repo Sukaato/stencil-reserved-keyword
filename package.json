@@ -1,0 +1,21 @@
+{
+  "name": "root",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "packages/core",
+    "packages/docs",
+    "packages/vue",
+    "packages/demo"
+  ],
+  "scripts": {
+    "install:all": "npm install -w @test/core -w @test/vue",
+    "install:core": "npm install -w @test/core",
+    "build:core": "cd packages/core && npm run build",
+    "install:vue": "npm install -w @test/vue @test/core",
+    "build:vue": "cd packages/vue && npm run build"
+  },
+  "engines": {
+    "node": ">=20.x"
+  }
+}

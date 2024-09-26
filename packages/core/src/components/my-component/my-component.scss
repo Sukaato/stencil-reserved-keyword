@@ -1,0 +1,78 @@
+:host {
+  --border-radius: 8px;
+  --border-color: transparent;
+  --background: oklch(96.1151% 0 0);
+  --color: oklch(27.8078% 0.029596 256.847952);
+
+  --animation: 0.25s ease-out;
+  --focus-scale: 0.97;
+
+  display: inline-block;
+
+  button {
+    box-sizing: border-box;
+    display: inline-flex;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 0.5rem;
+    height: 2rem;
+    min-height: 2rem;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+    font-size: 0.875rem;
+
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    outline-color: var(--background);
+
+    background-color: var(--background);
+
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    color: var(--color);
+
+    font-weight: 600;
+    line-height: 1em;
+    text-align: center;
+    text-decoration-line: none;
+    text-rendering: optimizeLegibility;
+
+    animation: button-pop var(--animation);
+    transition-duration: 200ms;
+    transition-property: color, background-color, border-color, opacity, box-shadow, transform;
+    transition-timing-function: ease-out;
+
+    user-select: none;
+
+    &:hover {
+      cursor: pointer;
+      --background: oklch(92.4169% 0.00108 197.137559);
+    }
+
+    &:active:hover,
+    &:active:focus {
+      transform: scale(var(--focus-scale));
+      animation: button-pop 0s ease-out;
+    }
+
+    &:focus-visible {
+      outline-style: solid;
+      outline-width: 2px;
+      outline-offset: 2px;
+    }
+  }
+
+  @keyframes button-pop {
+    0% {
+      transform: scale(var(--focus-scale));
+    }
+    40% {
+      transform: scale(1.02);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+}
